@@ -371,3 +371,24 @@ document.getElementById('searchStatus').addEventListener('change', (e) => filter
 document.getElementById('searchDate').addEventListener('change', (e) => filterEvents("date", e.target.value));
 document.getElementById('sortSelect').addEventListener('change', (e) => { sortAndPopulateTable(e.target.value) });
 document.getElementById('numberOfRows').addEventListener('change', (e) => { changeNumberOfRows(e.target.value) });
+
+document.getElementById('menubar').addEventListener('click', () => { 
+	let sidebar = document.getElementById("sidebar") ;
+	if(sidebar.style.width === "300px"){
+		sidebar.style.width = "0px";
+		sidebar.style.heigth = "0px";
+	} else {
+		sidebar.style.width = "300px";
+		sidebar.style.height = "100%";
+	} 
+ });
+ 
+ document.getElementById('toggleDarkMode').addEventListener('change', function(){ 
+    if (this.checked) {
+        document.documentElement.classList.add('dark');
+        document.documentElement.classList.remove('light');
+    } else {
+        document.documentElement.classList.add('light');
+        document.documentElement.classList.remove('dark');
+    }
+});

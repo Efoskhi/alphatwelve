@@ -13,3 +13,13 @@
     --largeText : 20px;
     --mobileScreen : 768px;
 }
+
+:root.light {
+    --white: #ffffff;
+    --black: #000000;
+}
+
+:root.dark {
+    --white: #121212;
+    --black: #ffffff;
+}

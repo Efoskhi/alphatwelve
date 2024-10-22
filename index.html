@@ -14,11 +14,13 @@
 <body>
     <div class="container">
         <div class="navbar">
-            <img class="logo" src="images/logo.png" alt="logo">
-            <ion-icon name="menu-outline"></ion-icon>
+            <div class="navbarContent">
+				<img class="logo" src="images/logo.png" alt="logo">
+            	<ion-icon name="menu-outline" class="icon" id="menubar" ></ion-icon>
+			</div>
         </div>
         <div class="wrapper">
-            <div class="sidebar">
+            <div class="sidebar" id="sidebar">
                 <div class="sidebarContent">
                     <img class="logo" src="images/logo.png" alt="logo">
                     <div class="links">
@@ -58,7 +60,7 @@
                     <div class="link hovernot">
                         <div class="darkmodeWrapper">
                             <label class="toggleBox">
-                                <input type="checkbox" id="toggle" class="isActiveReferralContest">
+                                <input type="checkbox" id="toggleDarkMode" class="isActiveReferralContest">
                                 <span class="toggleSlider round"></span>
                             </label>
                             <label for="toggle" class="toggleText">Dark Mode</label>
@@ -103,21 +105,21 @@
                     <div class="carousel">
                         <div class="eventsWrapper">
                             <div class="event">
-                                <img src="/images/slider1.png" alt="slider1 image">
+                                <img src="images/slider1.png" alt="slider1 image">
                                 <div class="textWrapper">
                                     <p class="label">Upcoming Events</p>
                                     <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id excepturi, recusandae officiis repellat pariatur facere, unde amet optio fug</p>
                                 </div>
                             </div>
                             <div class="event">
-                                <img src="/images/slider2.png" alt="slider2 image">
+                                <img src="images/slider2.png" alt="slider2 image">
                                 <div class="textWrapper">
                                     <p class="label">Latest News & Updates</p>
                                     <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id excepturi, recusandae officiis repellat pariatur facere, unde amet optio fug</p>
                                 </div>
                             </div>
                             <div class="event">
-                                <img src="/images/slider3.png" alt="slider3 image">
+                                <img src="images/slider3.png" alt="slider3 image">
                                 <div class="textWrapper">
                                     <p class="label">Featured Updates</p>
                                     <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id excepturi, recusandae officiis repellat pariatur facere, unde amet optio fug</p>
@@ -131,7 +133,6 @@
                             <span class="dot"></span>
                             <span class="dot"></span>
                             <span class="dot"></span>
-                            <span class="dot"></span>
                         </div>
                     </div>
                       
@@ -140,7 +141,7 @@
                     <p class="sectionText">Event History</p>
                     <div class="optionsWrapper">
                         <input type="text" placeholder="Search" id="searchInput">
-                        <input type="date" id="searchDate">
+                        <input type="date" id="searchDate" placeholder="date" >
                         <select class="select-status" id="searchStatus">
                             <option value="" selected>Status All</option>
                             <option value="Completed">Completed</option>
@@ -159,7 +160,8 @@
                             </select>
                         </div>
                     </div>
-                    <table id="eventTable">
+                    <div class="tableContent">
+						<table id="eventTable">
                         <thead>
                             <tr>
                                 <th>Event Name</th>
@@ -171,7 +173,8 @@
                         <tbody>
                         </tbody>
                     </table>
-                    <div class="pagination">
+					</div>
+					<div class="pagination">
                         <div id="pagination"></div>
                         <div class="numberOfRows">
                             <p>Show</p>
@@ -183,6 +186,31 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="bottomNavbar">
+            	<div class="links">
+                        <a class="link active">
+                            <ion-icon name="home-outline" class="icon"></ion-icon>
+                            <p class="linkText">Home</p>
+                        </a>
+                        <a class="link">
+                            <ion-icon name="calendar-outline" class="icon"></ion-icon>
+                            <p class="linkText">Events</p>
+                        </a>
+                        <a class="link">
+                            <ion-icon name="person-outline" class="icon"></ion-icon>
+                            <p class="linkText">Speakers</p>
+                        </a>
+                        <a class="link">
+                            <ion-icon name="clipboard-outline" class="icon"></ion-icon>
+                            <p class="linkText">Reports</p>
+                        </a>
+                        <a class="link">
+                            <ion-icon name="person-outline" class="icon"></ion-icon>
+                            <p class="linkText">Profile</p>
+                        </a>
+                        
+                    </div>
             </div>
         </div>
     </div>

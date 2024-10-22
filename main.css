@@ -6,21 +6,39 @@
     font-family: 'Poppins', sans-serif;
     border: none;
     outline: none;
+    box-sizing : border-box;
 }
+
+select, input {
+	color: var(--black);
+} 
 
 body {
     margin: 0;
     padding: 0;
     background-color: var(--white);
+    color: var(--black);
 }
 
 .container .navbar {
     display : none;
-    align-items: center;
     background-color: var(--white);
     padding: 10px;
+    position : fixed ;
+    top : 0;
+    width : 100%;
+    z-index : 2;
 }
 
+.container .navbarContent {
+   	display: flex;
+   	align-items: center;
+   	justify-content: space-between ; 
+} 
+
+.container .navbar .icon {
+	font-size : var(--largeText)
+} 
 .wrapper {
     display : flex;
 }
@@ -29,6 +47,7 @@ body {
     width : 250px;
     border-right: 1px solid var(--divider);
     overflow: hidden;
+    background-color: var(--white);
 }
 
 .wrapper .sidebar .sidebarContent {
@@ -43,6 +62,7 @@ body {
     margin : 10px 0;
     padding : 5px 10px;
     cursor: pointer;
+    color: var(--black);
 }
 
 .sidebar .link:not(.hovernot):hover {
@@ -50,8 +70,8 @@ body {
     border-radius: 5px;
 }
 
-.sidebar .link:hover .linkText,
-.sidebar .link:hover .icon {
+.link:hover .linkText,
+.link:hover .icon {
     color: var(--primary);
 }
 
@@ -212,11 +232,13 @@ body {
 }
 
 .content .eventsReportWrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap:5px;
 }
 
 .content .chart {
-    width: 50%;
+    width: 100%;
     border: 2px solid var(--divider);
     padding : 10px;
 }
@@ -228,7 +250,7 @@ body {
 .content .carousel {
     position: relative;
     overflow: hidden;
-    width: 50%;
+    width: 100%;
 }
   
 .content .eventsWrapper {
@@ -298,8 +320,6 @@ body {
 .content .next {
     right: 10px;
 }
-
-
 /* Dots */
 .content .dotsWrapper {
     position: absolute;
@@ -324,16 +344,17 @@ body {
     width : 25px;
 }
 
-.content .table .table {
-   overflow: auto;
-   width: 100%;
+.content .tableContent {
+   overflow-x: auto;
 }
 
 .content .table .optionsWrapper {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
     align-items: center;
     gap: 5px;
     margin: 15px 0;
+    flex-grow :grow ;
 }
 
 .content .table .optionsWrapper .sortWrapper {
@@ -348,13 +369,13 @@ body {
     background-color: transparent;
     border: 2px solid var(--divider);
     font-family: 'Poppins', sans-serif;
+    width : 100%;
 }
 
 .content .table table {
-    width : 100%;
+    white-space:nowrap; 
     text-align: left;
     border-collapse: collapse;
-
 }
 
 .content .table table thead {
@@ -372,6 +393,7 @@ body {
     padding: 10px 0 10px 20px;
     border-bottom: 2px solid var(--divider);
     font-size: var(--smallText);
+    color: var(--black);
 }
 
 .content .table table .status {
@@ -450,15 +472,65 @@ body {
     background-color: transparent;
     border: 2px solid var(--divider);
     padding: 10px;
-    width: 50px;
+    width: 60%;
+}
+
+.bottomNavbar {
+	display:none ;
+	position :fixed ;
+	width :100%;
+	bottom :0;
+	background :var(--white) ;
+	padding :10px 20px;
+	z-index :2;
+} 
+.bottomNavbar .links {
+	display : flex ;
+	align-items: center ;
+	justify-content :space-between ;
+} 
+.bottomNavbar .links .link{ 
+	text-align :center ;
+	font-size: var(-smallerText) ;
+	padding-top: 10px;
+} 
+
+.bottomNavbar .links .link.active, .bottomNavbar .links .link:hover { 
+	border-top :2px solid var(--primary) ;
+} 
+
+.bottomNavbar .links .link .linkText {
+    font-size: var(--smallerText);
 }
 
 @media screen and (max-width: 768px) {
     .container .navbar {
         display: block;
     }
+    
+    .wrapper {
+    	display : block;
+    	margin-top : 20px;
+	}
 
     .wrapper .sidebar {
+    	position : fixed;
         width: 0;
+        height : 0;
+        z-index : 10;
+        top:0;
     }
+    
+   .content .cards, .content .eventsReportWrapper { 
+    	grid-template-columns: auto ;
+   } 
+   
+   .content .table .optionsWrapper {
+	    display: grid;
+	    grid-template-columns: auto;
+	} 
+	
+	.bottomNavbar {
+		display:block ;
+	} 
 }
